@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+/* reset */
+html, body, div, span, 
+h1, h2, h3, h4, h5, h6, p, img, ol, ul, li, 
+form, label, 
+table, caption, tbody, tfoot, thead, tr, th, td,
+footer, header, nav, section {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    vertical-align:baseline;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+	font-family: "Helvetica Neue",
+	  Arial,
+	  "Hiragino Kaku Gothic ProN",
+	  "Hiragino Sans",
+	  Meiryo,
+	  sans-serif;
+	width: 100%;
+	line-height: 1.75;
+	color: #333;
+	background-color:white;
+	font-size: 1.6em;
+}
+
+aside,footer,header,nav,section {
+    display:block;
+}
+
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+	color: #71BFDD;
+}
+
+nav div {
+  font-size: 1.6rem;
+}
+
+.top {
+	padding: 100px 20px;
+	background-image: url(../img/top_img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 70%;
+}
+
+.top__title {
+  font-size: 4.5rem;
+}
+
+.section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.container {
+	margin-top: 3rem;
+}
+
+.heading {
+    display: inline;
+    position: relative;
+    z-index: 1;
+    font-size: 2.4rem;
+}
+
+/* 見出しに下線をつける */
+.heading:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 0%;
+  height: 30px;
+  background-image: linear-gradient(rgba(0,0,0,0) 70%, rgb(175,227,247) 70%);
+  z-index: -1;
+  transition: all 0.8s;
+}
+
+/* 見出しにactive要素がついたら下線を表示する */
+.heading.isActive:after {
+  width: 100%;
+}
+
+.skill {
+	margin-bottom: 2rem;
+}
+
+.skill-title {
+  font-size: 2.1rem;
+  margin-bottom: 2.4rem;
+}
+
+.skill-list {
+	text-align: left;
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.work {
+	padding: 10%;
+}
+
+.work-title {
+  font-size: 2.1rem;
+  margin-bottom: 2.4rem;
+}
+
+.site-img {
+	max-width: 100%;
+    height: auto;
+    padding-bottom: 2rem;
+}
+
+footer .copyright {
+    text-align: center;
+}
+
+.form-group label {
+	text-align: left;
+}
+
+.form-control {
+  font-size: 1.6rem;
+}
+
+.btn{
+  font-size: 1.6rem;
+}
+
+@media (min-width: 768px) {
+  .top {
+	padding: 200px 100px;
+  }
+  
+  .top__title {
+  	font-size: 9.4rem;
+  }
+  
+  .heading {
+    font-size: 2.6rem;
+  }
+  
+  .skill-title {
+    font-size: 2.2rem;
+  }
+}
