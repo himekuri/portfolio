@@ -49,12 +49,12 @@ a {
 }
 
 nav div {
-  font-size: 1.6rem;
+    font-size: 1.6rem;
 }
 
 .top {
-	padding: 100px 20px;
-	background-image: url(../img/top_img.jpg);
+    padding: 100px 20px;
+    background-image: url(../img/top_img.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right center;
@@ -62,7 +62,7 @@ nav div {
 }
 
 .top__title {
-  font-size: 4.5rem;
+    font-size: 4.5rem;
 }
 
 .section {
@@ -71,7 +71,7 @@ nav div {
 }
 
 .container {
-	margin-top: 3rem;
+    margin-top: 3rem;
 }
 
 .heading {
@@ -82,56 +82,75 @@ nav div {
 }
 
 /* 見出しに下線をつける */
+
 .heading:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0px;
-  width: 0%;
-  height: 30px;
-  background-image: linear-gradient(rgba(0,0,0,0) 70%, rgb(175,227,247) 70%);
-  z-index: -1;
-  transition: all 0.8s;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 0%;
+    height: 30px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(175, 227, 247) 70%);
+    z-index: -1;
+    transition: all 0.8s;
 }
 
 /* 見出しにactive要素がついたら下線を表示する */
+
 .heading.isActive:after {
-  width: 100%;
+    width: 100%;
 }
 
 .skill {
-	margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .skill-title {
-  font-size: 2.1rem;
-  margin-bottom: 2.4rem;
+    font-size: 2.1rem;
+    margin-bottom: 2.4rem;
 }
 
 .skill-list {
-	text-align: left;
-	display: flex;
+    text-align: left;
+    display: flex;
     align-items: center;
     flex-direction: column;
 }
 
 .work {
-	padding: 10%;
+    padding: 10%;
 }
 
 .work-title {
-  font-size: 2.1rem;
-  margin-bottom: 2.4rem;
+    font-size: 2.1rem;
+    margin-bottom: 2.4rem;
 }
 
 .site-img {
-	max-width: 100%;
+    max-width: 100%;
     height: auto;
     padding-bottom: 2rem;
 }
 
 footer .copyright {
     text-align: center;
+    padding-bottom: 2rem;
+}
+
+.transition-btn {
+    padding: 6rem 0;
+}
+
+.btn {
+    font-size: 1.6rem;
+}
+
+.form {
+    padding-top: 2rem;
+}
+
+.form-message {
+    padding: 4rem 0;
 }
 
 .form-group label {
@@ -142,24 +161,21 @@ footer .copyright {
   font-size: 1.6rem;
 }
 
-.btn{
-  font-size: 1.6rem;
-}
 
 @media (min-width: 768px) {
-  .top {
-	padding: 200px 100px;
-  }
-  
-  .top__title {
-  	font-size: 9.4rem;
-  }
-  
-  .heading {
-    font-size: 2.6rem;
-  }
-  
-  .skill-title {
-    font-size: 2.2rem;
-  }
+    .top {
+        padding: 200px 100px;
+    }
+
+    .top__title {
+        font-size: 9.4rem;
+    }
+
+    .heading {
+        font-size: 2.6rem;
+    }
+
+    .skill-title {
+        font-size: 2.2rem;
+    }
 }

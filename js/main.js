@@ -27,5 +27,5 @@ $('.heading').waypoint({
       this.destroy();
     }
   },
-  offset: '50%',
+  offset: '60%',
 });
