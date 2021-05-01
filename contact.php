@@ -50,22 +50,33 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
         
     
         // エラーメッセージ・完了メッセージの用意
-        $err_msg = '';
+        $errors = [];
         $complete_msg = '';
     
         // 空チェック
         if ($name == '' || $mail == '' || $content == '') {
-            $err_msg = '全ての項目を入力してください。';
+            $errors[] = '全ての項目を入力してください。';
         }
-    
-        // エラーなし（全ての項目が入力されている）
-        if ($err_msg == '') {
+        
+        //emailの形式が正しいか
+        if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
+            $errors[] = '正しいEメールアドレスを指定してください。';
+        }
+        
+        //内容が255文字以内か
+        if (mb_strlen($_POST['content']) > 255) {
+            $errors[] = 'お問い合わせ内容は255文字以内でお願いします。';
+        }
+        
+        // エラーなし
+        if (empty($errors)) {
             $to = 'bib1hannak1@gmail.com'; 
             $headers = "From: " . $mail . "\r\n";
     
             // 本文の最後に名前を追加
             $content .= "\r\n\r\n" . $name;
             
+            //タイトル
             $subject = 'ポートフォリオからお問い合わせがありました';
             
             // メール送信
@@ -107,10 +118,12 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
                 <p>下記フォームよりご記入ください。項目は全て必ずご記入お願いします。</p>
 		    </div>
 		    
-		    <?php if ($err_msg != ''): ?>
-                <div class="alert alert-danger">
-                    <?php echo $err_msg; ?>
-                </div>
+		    <?php if (!empty($errors)): ?>
+		        <?php foreach ($errors as $msg): ?>
+                    <div class="alert alert-danger">
+                        <?= $msg ?>
+                    </div>
+                <?php endforeach; ?>
             <?php endif; ?>
 
             <?php if ($complete_msg != ''): ?>
